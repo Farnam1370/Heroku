@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Rental Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict') }}"method="post">
+        <label for="Apartment">Apartment</label><br>
+    	<input type="text" name="Apartment" placeholder="Apartment" required="required" />
+        <input type="text" name="House" placeholder="House" required="required" />
+		<input type="text" name="Studio" placeholder="Studio" required="required" />
+		<input type="text" name="Furnished" placeholder="Furnished" required="required" />
+        <input type="text" name="Unfernished" placeholder="Unfernished" required="required" />
+        <input type="text" name="Upholstered" placeholder="Upholstered" required="required" />
+		<input type="text" name="Upholstered or furnished" placeholder="Upholstered or furnished" required="required" />
+		<input type="text" name="Binnenstad en Oostelijk Havengebied" placeholder="Binnenstad en Oostelijk Havengebied" required="required" />
+        <input type="text" name="Buitenveldert" placeholder="Buitenveldert" required="required" />
+        <input type="text" name="IJburg" placeholder="IJburg" required="required" />
+		<input type="text" name="Nieuw-West" placeholder="Nieuw-West" required="required" />
+		<input type="text" name="Noord oost" placeholder="Noord oost" required="required" />
+        <input type="text" name="Noord west" placeholder="Noord west" required="required" />
+        <input type="text" name="Oost" placeholder="Oost" required="required" />
+		<input type="text" name="West" placeholder="West" required="required" />
+		<input type="text" name="Zuid" placeholder="Zuid" required="required" />
+        <input type="text" name="Zuidoost" placeholder="Zuidoost" required="required" />
+		<input type="text" name="room" placeholder="room" required="required" />
+		<input type="text" name="area_square_meter" placeholder="area_square_meter" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
